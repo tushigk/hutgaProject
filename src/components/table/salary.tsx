@@ -146,10 +146,10 @@ const SalaryTable = () => {
   const renderFilterForm = () => {
     return (
       <Form layout="inline" className="mb-4">
-        <Form.Item label="Ажилтан" className="w-1/5">
+        <Form.Item>
           <Select placeholder="Ажилтан нэр" />
         </Form.Item>
-        <Form.Item label="Бодогдсон сар" className="w-1/5">
+        <Form.Item className="w-1/5">
           <DatePicker placeholder="Бодогдсон сар " />
         </Form.Item>
       </Form>

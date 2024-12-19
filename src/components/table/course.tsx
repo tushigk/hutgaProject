@@ -107,7 +107,7 @@ const CourseTable = () => {
   const renderFilterForm = () => {
     return (
       <Form layout="inline" className="mb-4">
-        <Form.Item label="Дамжлагын төрөл" className="w-1/5">
+        <Form.Item className="w-1/5">
           <Select placeholder="Дамжлагын төрөлөөр шүүх" />
         </Form.Item>
       </Form>

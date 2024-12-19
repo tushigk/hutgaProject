@@ -141,13 +141,13 @@ const EmployeeTable = () => {
   const renderFilterForm = () => {
     return (
       <Form layout="inline" className="mb-4">
-        <Form.Item label="Нэр">
+        <Form.Item>
           <Input placeholder="Нэрээр  шүүх" />
         </Form.Item>
-        <Form.Item label="Утасны дугаар">
+        <Form.Item>
           <Input placeholder="Утасны дугаараар шүүх" />
         </Form.Item>
-        <Form.Item label="Албан тушаал">
+        <Form.Item>
           <Select placeholder="Албан тушаалаар шүүх" />
         </Form.Item>
       </Form>

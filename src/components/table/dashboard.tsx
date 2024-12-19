@@ -147,39 +147,39 @@ const DashboardTable = () => {
   const renderFilterForm = () => {
     return (
       <Form layout="inline" className="mb-4">
-        <Form.Item label="Харилцагч">
-          <Select placeholder="Бүгд" allowClear style={{ width: 200 }}>
+        <Form.Item>
+          <Select placeholder="Харилцагч" allowClear style={{ width: 200 }}>
             <Select.Option value="pending">Хүлээгдэж байна</Select.Option>
             <Select.Option value="approved">Баталгаажсан</Select.Option>
             <Select.Option value="rejected">Цуцлагдсан</Select.Option>
           </Select>
         </Form.Item>
-        <Form.Item label="Захиалга">
-          <Select placeholder="Бүгд" allowClear style={{ width: 200 }}>
+        <Form.Item>
+          <Select placeholder="Захиалга" allowClear style={{ width: 200 }}>
             <Select.Option value="pending">Хүлээгдэж байна</Select.Option>
             <Select.Option value="approved">Баталгаажсан</Select.Option>
             <Select.Option value="rejected">Цуцлагдсан</Select.Option>
           </Select>
         </Form.Item>
-        <Form.Item label="Дамжлага">
-          <Select placeholder="Бүгд" allowClear style={{ width: 200 }}>
+        <Form.Item>
+          <Select placeholder="Дамжлага" allowClear style={{ width: 200 }}>
             <Select.Option value="pending">Хүлээгдэж байна</Select.Option>
             <Select.Option value="approved">Баталгаажсан</Select.Option>
             <Select.Option value="rejected">Цуцлагдсан</Select.Option>
           </Select>
         </Form.Item>
-        <Form.Item label="Ажилтан">
-          <Select placeholder="Бүгд" allowClear style={{ width: 200 }}>
+        <Form.Item>
+          <Select placeholder="Ажилтан" allowClear style={{ width: 200 }}>
             <Select.Option value="pending">Хүлээгдэж байна</Select.Option>
             <Select.Option value="approved">Баталгаажсан</Select.Option>
             <Select.Option value="rejected">Цуцлагдсан</Select.Option>
           </Select>
         </Form.Item>
-        <Form.Item label="Эхлэх огноо">
-          <DatePicker />
+        <Form.Item>
+          <DatePicker placeholder="Эхлэх огноо" />
         </Form.Item>
-        <Form.Item label="Дуусах огноо">
-          <DatePicker />
+        <Form.Item>
+          <DatePicker placeholder="Дуусах огноо" />
         </Form.Item>
       </Form>
     );

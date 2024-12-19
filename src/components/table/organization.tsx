@@ -95,8 +95,8 @@ const OrganizationTable = () => {
   const renderFilterForm = () => {
     return (
       <Form layout="inline" className="mb-4">
-        <Form.Item label="Байгууллагын нэр">
-          <Input placeholder="Нэрээр  шүүх" />
+        <Form.Item className="w-52">
+          <Input placeholder="Байгууллагын нэрээр шүүх" />
         </Form.Item>
       </Form>
     );
