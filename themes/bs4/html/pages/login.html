@@ -1,0 +1,68 @@
+<div class="container pt-4">
+	<div class="row">  
+		<div class="col-md-12" align="center">
+
+			<div class="row">
+				<div class="col-md-6 offset-md-3">
+					<h3>{$login_label}</h3>
+
+					{$login_message <!-- html/parts/login-message.html -->}
+
+					<form action="login.php" method="post" name="login">
+						<input placeholder="{$login_user_label}" type="text" size="12" maxlength="10" name="usr" class="form-control" />
+						<br>
+						<input type="hidden" name="action" value="process">
+						<input placeholder="{$login_password_label}" type="password" size="12" maxlength="10" name="pwd" class="form-control" />
+						<br>
+						<input type="submit" name="Login" value="{$login_button_label}" class="btn btn-success btn-block">
+					</form>
+					<br>
+					<a href="create.php" target="_self" class="btn btn-warning btn-block">{$login_new_player_label}</a><br>
+					<button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#resetpw">Reset Password</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Modal -->
+
+<div class="modal" id="resetpw" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Reset your Password</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+			<div class="modal-body">
+				<form name="forgotpasswordform" action="" method="post">
+					<div class="row">
+						<div class="col-xs-7">
+							<input class="form-control" placeholder="Email Address" name="forgotpassword" type="text" value="" id="forgotpassword" />
+						</div>
+
+						<div class="col-xs-3">
+							<input class="btn btn-warning" type="submit" name="submit" value="Submit" class="mainoption" />
+						</div>
+					</div>
+				</form>
+			</div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+	var fp_success = '{$fp_success}';
+	var fp_error   = '{$fp_error}';
+
+	if (fp_success !== '')
+		alert(fp_success);
+
+	if (fp_error !== '')
+		alert(fp_error);
+</script>

@@ -1,0 +1,370 @@
+<div class="container pt-4">
+	<div class="row">
+		<div class="col-md-3">
+			{$sidebar <!-- html/pages/sidebar.html -->}
+		</div>      
+
+		<div class="col-md-9">
+			<h3>{$rules_label}</h3>
+
+			<p>The object of Texas Holdem is to make the best 5 card poker 
+			hand from the 5 community cards on the table and your own 
+			2 cards that only you can see. The community cards are dealt 
+			out during the hand with betting rounds in between so you 
+			are betting on the likleyhood of forming a winning hand 
+			by the end of the hand when all cards are revealed.
+			<br><br>
+			A game consists of playing hands of cards and each hand 
+			is split into alternating rounds of revealing cards and 
+			betting on the results.
+			<br><br>
+			Your good buddy has lent you $10K to join a high stakes 
+			poker game. Whatever profit or loss you make whilst playing 
+			in a game will be added or deducted from your total bankroll 
+			whenever you leave a table. The total bankroll determines 
+			your player ranking.
+			<br><br>
+			Be careful not to lose the initial $10K or it's back to 
+			your buddy to plead for more!</p>
+
+			<div class="row pb-2">
+				<div class="col-md-4">	
+					<div class="card">
+						<div class="card-body">
+							<center>
+								<h2>Royal Flush</h2>
+								<img src="{$theme.url}/images/tutorial/rh_royal_flush.png" class="img-fluid">
+								<p>The highest possible poker hand is the Royal Flush. It consists of a Ten, Jack, Queen, King and Ace, all of the same suit.</p>
+							</center>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-4">	
+					<div class="card">
+						<div class="card-body">
+							<center>
+								<h2>Straight Flush</h2>
+								<img src="{$theme.url}/images/tutorial/rh_straight_flush.png" class="img-fluid">
+								<p>A combination of both a straight and a flush. The cards must all be of the same suit and they must run in value (e.g. 4,5,6,7,8). If more than one player has a Straight Flush, the player with the best Highcard wins.</p>
+							</center>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-4">	
+					<div class="card">
+						<div class="card-body">
+							<center>
+								<h2>Four Of A Kind</h2>
+								<img src="{$theme.url}/images/tutorial/rh_four_of_a_kind.png" class="img-fluid">
+								<p>This hand is made up with 4 cards 
+								of the same value (e.g. 4 X Jacks). If more than one player 
+								has Four Of A Kind the highest value Four Of A Kind would 
+								win.</p>
+							</center>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row pb-2">
+				<div class="col-md-4">	
+					<div class="card">
+						<div class="card-body">
+							<center>
+								<h2>Full House</h2>
+								<img src="{$theme.url}/images/tutorial/rh_full_house.png" class="img-fluid">
+								<p>This hand is made up with 3 cards 
+								of one value and two of another value (e.g. 3 X Nines and 
+								2 X Queens). If more than one player has a Full House the 
+								winning hand would be the one with the highest triple value 
+								or failing that the highest double value.</p>
+							</center>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-4">	
+					<div class="card">
+						<div class="card-body">
+							<center>
+								<h2>Flush</h2>
+								<img src="{$theme.url}/images/tutorial/rh_flush.png" class="img-fluid">
+								<p>A Flush is when the hand contains 
+								5 cards of the same suit (e.g. 5 X Spades). If more than one 
+								player has a Flush the winner is the player with the best 
+								Highcard.</p>
+							</center>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-4">	
+					<div class="card">
+						<div class="card-body">
+							<center>
+								<h2>Straight</h2>
+								<img src="{$theme.url}/images/tutorial/rh_straight.png" class="img-fluid">
+								<p>To make a Straight the must run 
+								in value (e.g. 4,5,6,7,8) but it does not matter what suit 
+								they are. If more than one player has a Straight , the player 
+								with the best Highcard wins.</p>
+							</center>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="row pb-2">
+				<div class="col-md-4">	
+					<div class="card">
+						<div class="card-body">
+							<center>
+								<h2>Three Of A Kind</h2>
+								<img src="{$theme.url}/images/tutorial/rh_three_of_a_kind.png" class="img-fluid">
+								<p>This hand is made up with 3 cards 
+								of the same value (e.g. 3 X Sevens). If more than one player 
+								has a Three Of A Kind the winning hand would be the one with 
+								the highest value Three Of A Kind.</p>
+							</center>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-4">	
+					<div class="card">
+						<div class="card-body">
+							<center>
+								<h2>Two Pair</h2>
+								<img src="{$theme.url}/images/tutorial/rh_two_pair.png" class="img-fluid">
+								<p>Two pair of the same value (e.g. 
+								2 X Fours and 2 X Sevens). If more than one player has Two 
+								Pair, the winner is the player with the highest pair value. 
+								If both players have the same pairs the player with the best 
+								Highcard wins.</p>
+							</center>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-4">	
+					<div class="card">
+						<div class="card-body">
+							<center>
+								<h2>One Pair</h2>
+								<img src="{$theme.url}/images/tutorial/rh_pair.png" class="img-fluid">
+								<p>One pair of the same value (e.g. 
+								2 X Fours). If more than one player has One Pair, the winner 
+								is the player with the highest pair value. If both players 
+								have the same pair the player with the best Highcard win.</p>
+							</center>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row pb-2">
+				<div class="col-md-4">	
+					<div class="card">
+						<div class="card-body">
+							<center>
+								<h2>Highcard</h2>
+								<img src="{$theme.url}/images/tutorial/rh_high_card.png" class="img-fluid">
+								<p>The Highcard is the highest value 
+								card that is in your hand that is not duplicated (not a pair, 
+								3 of a kind or 4 of a kind). If one or more players has the 
+								same Highcard the next highest Highcard will be evaluated 
+								until a winner is found.</p>
+							</center>
+						</div>
+					</div>
+				</div>														
+			</div>
+
+			<br>
+
+<p><b>Game Play</b></p>
+
+<p>1) The hand begins.</p>
+
+
+<p>2) The next player from the <b>dealer button</b> posts the <b>small blind</b>.</p>
+
+
+<p>3) The next player posts the <b>big blind</b>.</p>
+
+
+<p>4) Each player is dealt their personal hand (2 cards each). These are called the player's <b>hole cards</b>.</p>
+
+
+<p>5) <b>Betting round</b> 1 commences (pre-flop).</p>
+
+
+<p><b>Game Play</b></p>
+
+
+<p>1) The hand begins.</p>
+
+
+<p>2) The next player from the <b>dealer button</b> posts the <b>small blind</b>.</p>
+
+
+<p>3) The next player posts the <b>big blind</b>.</p>
+
+
+<p>4) Each player is dealt their personal hand (2 cards each). These are called the player's <b>hole cards</b>.</p>
+
+
+<p>5) <b>Betting round</b> 1 commences (pre-flop).</p>
+
+
+<p>6) The first 3 community cards are dealt out. This is called the <b>Flop</b>.</p>
+
+
+<p>7) <b>Betting round</b> 2 commences.</p>
+
+
+<p>8) The 4th community card is dealt out. This is called the <b>Turn</b> card.</p>
+
+
+<p>9) <b>Betting round</b> 3 commences.</p>
+
+
+<p>10) The 5th and last community card is dealt. This is called the <b>River</b> card.</p>
+
+
+<p>11) Last <b>betting round</b> commences.</p>
+
+
+<p>12) The cards of the remaining players that have not <b>folded</b> are turned over to find the winner.</p>
+
+
+<p>13) The winnings are distributed**. If more than one player wins the pot is split.</p>
+
+
+<p>14) If more than one player still has money in their pot, a new hand begins.</p>
+
+
+<p>&nbsp; &nbsp;</p>
+
+
+<p>** Note: You cannot win more than the amount you bet from another player.</p>
+<br>
+
+
+<p><b>Terms</b></p>
+
+<p><b>Dealer Button</b> A chip that marks where the dealing begins. This moves forward one player each hand.</p>
+
+
+<p><b>Small Blind</b> An automatic small bet that must be paid by the next player from the dealer button at the beginning of a hand.</p>
+
+
+<p><b>Big Blind</b> An automatic large bet that must be paid by the next player from the small blind player at the beginning of a hand. During the first betting round this is the amount players must
+match or raise to stay in the current hand.</p>
+
+
+<p><b>Hole Cards</b> The 2 cards that you are dealt as your personal hand. Other players cannot see your cards unless they turn over at the end of the hand to find the winner.</p>
+
+
+<p><b>Betting Round</b> There are 4 betting rounds during a game. A player can choose to call a bet, raise a bet or fold their hand.</p>
+
+
+<p><b>Flop</b> The first 3 community cards dealt out during the hand after the first betting round.</p>
+
+
+<p><b>Turn</b> The 4th community card dealt out after the second betting round.</p>
+
+
+<p><b>River</b> The 5th community card dealt out after the third betting round.</p>
+
+
+<p><b>Call</b> Match the current bet amount.</p>
+
+
+<p><b>Raise</b> Raise the current bet amount.</p>
+
+
+<p><b>Fold</b> Discard your current hand and lose any money you have bet so far in this hand.</p>
+
+
+<p><b>Allin</b> Bet your entire pot on the hand.</p>
+
+<p>6) The first 3 community cards are dealt out. This is called the <b>Flop</b>.</p>
+
+
+<p>7) <b>Betting round</b> 2 commences.</p>
+
+
+<p>8) The 4th community card is dealt out. This is called the <b>Turn</b> card.</p>
+
+
+<p>9) <b>Betting round</b> 3 commences.</p>
+
+
+<p>10) The 5th and last community card is dealt. This is called the <b>River</b> card.</p>
+
+
+<p>11) Last <b>betting round</b> commences.</p>
+
+
+<p>12) The cards of the remaining players that have not <b>folded</b> are turned over to find the winner.</p>
+
+
+<p>13) The winnings are distributed**. If more than one player wins the pot is split.</p>
+
+
+<p>14) If more than one player still has money in their pot, a new hand begins.</p>
+
+
+<p>&nbsp; &nbsp;</p>
+
+
+<p>** Note: You cannot win more than the amount you bet from another player.</p>
+<br>
+
+
+<p><b>Terms</b>
+</p>
+
+
+<p><b>Dealer Button</b> A chip that marks where the dealing begins. This moves forward one player each hand.</p>
+
+
+<p><b>Small Blind</b> An automatic small bet that must be paid by the next player from the dealer button at the beginning of a hand.</p>
+
+
+<p><b>Big Blind</b> An automatic large bet that must be paid by the next player from the small blind player at the beginning of a hand. During the first betting round this is the amount players must
+match or raise to stay in the current hand.</p>
+
+
+<p><b>Hole Cards</b> The 2 cards that you are dealt as your personal hand. Other players cannot see your cards unless they turn over at the end of the hand to find the winner.</p>
+
+
+<p><b>Betting Round</b> There are 4 betting rounds during a game. A player can choose to call a bet, raise a bet or fold their hand.</p>
+
+
+<p><b>Flop</b> The first 3 community cards dealt out during the hand after the first betting round.</p>
+
+
+<p><b>Turn</b> The 4th community card dealt out after the second betting round.</p>
+
+
+<p><b>River</b> The 5th community card dealt out after the third betting round.</p>
+
+
+<p><b>Call</b> Match the current bet amount.</p>
+
+
+<p><b>Raise</b> Raise the current bet amount.</p>
+
+
+<p><b>Fold</b> Discard your current hand and lose any money you have bet so far in this hand.</p>
+
+
+<p><b>Allin</b> Bet your entire pot on the hand.</p>
+			
+		</div>
+	</div>
+</div>

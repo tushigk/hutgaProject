@@ -1,0 +1,35 @@
+<div class="container pt-4">
+		<h4 class="panel-title">
+		{$sitout_timer_label} <div class="mr-auto">Please Wait: <span id="sitout">{$sitout_label}</span></div>
+		</h4>
+					
+		<div class="row">
+			{$scoreboard <!-- html/parts/scoreboard-each.html -->}
+		</div>		
+</div>
+
+<script type="text/JavaScript">
+function countdown(passcount)
+{
+    if (passcount > 0)
+    {
+        document.getElementById('sitout').innerHTML = '' + passcount + '';
+        passcount = (passcount - 1);
+        var e = passcount;
+        setTimeout(function()
+        {
+            countdown(passcount)
+        }, 1000);
+    }
+    else
+    {
+        parent.document.location.href = "lobby.php";
+    }
+}
+
+function startcountdown()
+{
+    countdown('{$sitout_start}');
+}
+window.onload = startcountdown; 
+</script>

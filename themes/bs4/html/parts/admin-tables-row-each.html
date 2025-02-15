@@ -1,0 +1,22 @@
+<tr> 
+	<td>{$gametable_name}</td>
+
+	<td class="cut-text">{$gametable_type}</td>
+
+    <td class="cut-text">{$gametable_gamestyle}</td>
+
+	<td>{$gametable_min}</td>
+
+	<td>{$gametable_max}</td>
+	
+	<td>{$gametable_sb}</td>
+
+	<td>{$gametable_bb}</td>	
+
+	<td>{$gametable_style}</td>
+
+	<td> 
+		<input type="button" name="Button" class="btn btn-warning btn-sm" value="Edit" onClick="changeview('admin.php?admin=edit-table&table={$gametable_id}')">	                        
+		<input type="button" name="Button" class="btn btn-danger btn-sm" value="Delete" onClick="changeview('admin.php?delete={$gametable_id}')">
+	</td>
+</tr>

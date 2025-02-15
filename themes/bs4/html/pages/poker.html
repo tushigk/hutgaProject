@@ -1,0 +1,194 @@
+<div class="main-wrapper">
+
+    <a id="leaveButton" href="lobby.php" class="poker__to-lobby">
+        <span class="icon-lobby_icon"></span>
+        <span>Lobby</span>
+    </a>
+
+    <div class="poker__wrapper">
+
+        <!-- poker__head START -->
+        <div class="poker__head">
+            <h1>Table {$tablename} #{$tableid}</h1>
+            <h2>Type: {$tabletype}</h2>
+            <h2>Blinds: {$blinds}</h2>
+        </div>
+        <!-- poker__head END -->
+
+        <!-- poker__main START -->
+        <div class="poker__table">
+            <div class="poker__table-img">
+                <img class="poker__table-img-desc" src="images/tablelayout/{$tablestyle}.png" alt="table">
+                <img class="poker__table-img-mob" src="images/tablelayout/{$tablestyle}_mob.png" alt="table">
+            </div>
+            
+            <div class="poker__table-pot">
+                <div class="poker__table-pot-chips">
+                    <img src="{$theme.url}/images/stavka_yellow_50.svg" alt="yel">
+                    <img src="{$theme.url}/images/stavka_red_5.svg" alt="yel">
+                    <img src="{$theme.url}/images/stavka_black_100.svg" alt="yel">
+                    <img src="{$theme.url}/images/stavka_yellow_50.svg" alt="yel">
+                </div>
+                <div id="tablelog"></div>
+                <div id="tablepot" class="poker__table-pot-summ">0</div>
+            </div>
+            <div class="poker__table-cards">
+                <div id="card1"><div class="poker__table-card"></div></div>
+                <div id="card2"><div class="poker__table-card"></div></div>
+                <div id="card3"><div class="poker__table-card"></div></div>
+                <div id="card4"><div class="poker__table-card"></div></div>
+                <div id="card5"><div class="poker__table-card"></div></div>
+            </div>
+
+            <div class="poker__users">
+                {$players <!-- html/parts/poker-player-each.html -->}
+            </div>
+
+        </div>
+        <!-- poker__main END -->
+
+        <!-- poker__bottom START -->
+        <div class="poker__bottom">
+
+            <div class="poker__bottom-left">
+                <button class="poker-btn poker__chat-btn">Chat</button>
+                <div id="startButton"></div>
+            </div>
+
+            <div id="buttonContainer">
+                <div id="buttons" class="poker__bottom-right">
+                    {$buttons <!-- html/parts/poker-button-*.html -->}
+                </div>
+            </div>
+
+
+
+            <!-- CHAT POPUP START -->
+            <div class="poker__chat">
+
+                <div class="poker__chat-head">
+                    <div class="poker__chat-head-tab" data-tabname="chat">
+                        <span class="icon-chat_icon">
+                            <span class="path1"></span>
+                            <div class="icon-chat_icon__circle"></div>
+                        </span>
+                        <span class="text">Chat</span>
+                    </div>
+                    <div class="poker__chat-head-tab" data-tabname="logs">
+                        <span class="icon-logs_icon"></span>
+                        <span class="text">Logs</span>
+                    </div>
+                    <div class="poker__chat-head-close"></div>
+                </div>
+
+                <div class="poker__chat-content">
+                    <div class="poker__chat-content-tab" data-tabcontent="chat">
+                        <div id="userchatdiv" class="poker__chat-messages">
+                            {$userchat}
+                        </div>
+
+                        <form class="poker__chat-write" onsubmit="return false;">
+                            <input class="write-input" type="text" placeholder="Write message">
+                            <button type="submit" onclick="push_chat();">
+                                <span class="icon-send_icon"></span>
+                            </button>
+                        </form>
+                    </div>
+                    <!-- chat tab end -->
+
+                    <div class="poker__chat-content-tab" data-tabcontent="logs">
+                        <div id="chatdiv" class="poker__chat-logs">
+                            {$dealerchat}
+                        </div>
+                    </div>
+                    <!-- logs tab end -->
+                </div>
+                <!-- poker__chat-content -->
+            </div>
+            <!-- CHAT POPUP END -->
+
+        </div>
+        <!-- poker__bottom END -->
+
+    </div>
+    
+    <div style="display:none;">
+        <form name="checkmov">
+            <input type="hidden" name="lastmove" id="lastmove">
+            <input type="hidden" name="tomove" id="tomove">
+            <input type="hidden" name="hand" id="hand">
+        </form>
+        <div class="tiny">
+           <div id="bankroll"></div>
+        </div>
+        <div id="flashObject"></div>
+        <div id="chatdiv"></div>
+        <div id="userchatdiv"></div>
+     </div>
+</div>
+<script type="text/javascript">
+    jQuery(document).ready(function(){
+        push_poker();
+    });
+    function startSeatTimer(seat, total, rem)
+    {
+        var $seat = $('#player-' + seat);
+        var $seatTimer = $seat.find('.poker__user-photo-loader');
+
+        if ($seatTimer.data('running') == 1)
+            return false;
+
+        $seatTimer.find('svg').data('total-time', total);
+        $seatTimer.find('svg').data('current-time', rem);
+        $seatTimer.find('.poker__user-photo-loader-timer').data('time', rem);
+        $seatTimer.data('running', 1).show();
+
+        // countdown timer user
+        var $loaderTimer = $seat.find('.poker__user-photo-loader-timer');
+        var startNubmer = $loaderTimer.data('time');
+        if ($loaderTimer.length) {
+            $loaderTimer.html(startNubmer);
+            var numberInterval = setInterval(function () {
+                startNubmer--;
+                $loaderTimer.html(startNubmer);
+                if (startNubmer < 0) {
+                    $seatTimer.data('running', 0).hide();
+                    clearInterval(numberInterval);
+                }
+            }, 1000);
+        }
+
+        var $loader_svg = $seat.find('.poker__user-photo-loader svg');
+        if ($loader_svg.length) {
+            var loader_svg_current_time = $loader_svg.data('current-time');
+            var loader_svg_total_time = $loader_svg.data('total-time');
+            var currentOffset = loader_svg_current_time * 100 / loader_svg_total_time;
+            $loader_svg.css('strokeDashoffset', 125 - (currentOffset*1.25));
+            $loader_svg.animate({ 'stroke-dashoffset': 125 }, loader_svg_current_time*1000, 'linear');
+        }
+    }
+    function stopSeatTimer(seat)
+    {
+        var $seat = $('#player-' + seat);
+        var $seatTimer = $seat.find('.poker__user-photo-loader');
+        $seatTimer.hide();
+    }
+    function push_chat()
+    {
+        var $form = $('.poker__chat-write');
+        var $chat = $form.find('.write-input').val();
+
+        $form.find('.write-input').val('');
+
+        if ($chat.length < 1)
+            return false;
+
+        $.post(
+            'includes/push_chat.php',
+            {
+                msg: $chat
+            },
+            function() {}
+        );
+    }
+</script>

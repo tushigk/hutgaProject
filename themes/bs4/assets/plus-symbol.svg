@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="12px" height="16px" viewBox="0 0 12 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<!-- Generator: Sketch 57.1 (83088) - https://sketch.com -->
+	<title>icon</title>
+	<desc>Created with Sketch.</desc>
+	<g id="Final" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+		<g id="Cards-Kartabita-Spades-Queen" transform="translate(-11.000000, -500.000000)" fill="#FFFFFF">
+			<g id="icon" transform="translate(11.000000, 500.000000)">
+				<rect id="Rectangle" x="5" y="0" width="2" height="16" rx="1"></rect>
+			</g>
+		</g>
+
+		<g id="Cards-Kartabita-Spades-Queen" fill="#FFFFFF" transform="translate(-11.000000, -500.000000)">
+			<g id="icon" transform="translate(-11.000000, -500.000000)">
+				<rect id="Rectangle" x="5" y="0" width="16" height="2" rx="1"></rect>
+			</g>
+		</g>
+	</g>
+</svg>

@@ -1,0 +1,33 @@
+<div class="container pt-4">
+    <div class="row">  
+        <div class="col-md-12">
+            {$message <!-- html/parts/register-message.html -->}
+		
+			<div class="row" align="center" style="margin: 0 auto;">
+			    <div class="col-md-6 offset-md-3">
+					<legend>{$create_player_label}</legend> 
+
+	                <form name="createplyr" action="create.php" method="post">
+	                	<input type="hidden" name="av" id="av" value="">
+		                <input type="hidden" name="action" value="createplayer">
+
+		                <input placeholder="{$create_player_name_label}" type="text" size="12" maxlength="10" name="user" class="form-control" value="{$create_player_name}" />
+		                <br> 
+
+		                <input placeholder="{$create_player_password_label} {$create_player_password_charlimit}" type="password" size="12" maxlength="10" name="password" class="form-control" />
+		                <br>
+
+		                <input placeholder="{$create_player_password_confirm_label} {$create_player_password_charlimit}" type="password" size="12" maxlength="10" name="password2" class="form-control" />
+						<br>
+						  
+						{$email_input <!-- html/parts/register-email-input.html -->}
+
+		                <input type="submit" name="Submit2" value="{$create_player_submit_label}" class="btn btn-success btn-block">
+	                </form>
+			    </div>
+
+				<div class="col-centered col-md-4"></div>	
+			</div>
+		</div>
+    </div>
+</div>

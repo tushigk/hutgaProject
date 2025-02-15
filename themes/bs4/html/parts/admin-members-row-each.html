@@ -1,0 +1,14 @@
+<tr>
+	<td>{$player.username}</td>
+	<td>{$player.rank}</td>
+	<td>{$player.datecreated}</td>
+	<td>{$player.email}</td>
+	<td>{$player.ipaddress}</td>
+	<td>{$player.approval <!-- html/parts/admin-members-row-(approve|active).html -->}</td>
+	<td>{$player.ban <!-- html/parts/admin-members-row-(ban|unban).html -->}</td>
+	<td>
+		<a href="admin.php?admin=edit-member&username={$player.username}" class="btn btn-warning btn-sm">Edit</a>
+	</td>
+	<td>{$player.delete <!-- html/parts/admin-members-row-delete.html -->}</td>
+	<td>{$player.reset <!-- html/parts/admin-members-row-reset.html -->}</td>
+</tr>

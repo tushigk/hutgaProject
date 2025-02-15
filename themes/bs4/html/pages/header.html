@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{$title}</title>
+
+	<!-- Latest compiled and minified CSS -->
+	{$styles}
+    
+	<!-- Latest compiled and minified JavaScript -->
+	{$scripts.header}
+</head>
+<body>
+	<nav id="head-nav" class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<div class="container">
+			<a class="navbar-brand" href="index.php">{$site_title}</a>
+			{$admin_nav <!-- html/parts/admin-nav.html -->}
+
+			<div class="collapse navbar-collapse" id="adminnav">
+				<ul class="navbar-nav ml-auto">
+					{$nav_content <!-- html/parts/nav-each.html -->}
+				</ul>
+			</div>
+		</div>
+	</nav>

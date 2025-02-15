@@ -1,0 +1,113 @@
+<h3>Backups <a role="button" class="btn btn-primary btn-sm" href="admin.php?admin=updates&create_backup=1">Create</a></h3>
+
+<table class="table table-hover">
+	<thead>
+		<th>Created</th>
+		<th>Size</th>
+		<th>Options</th>
+	</thead>
+
+	<tbody>
+		{$backups <!-- html/parts/admin-backup-*.html -->}
+	</tbody>
+</table>
+
+<br>
+
+<h3>Updates <small class="float-right">Current version: <span class="badge badge-info">{$current_version}</span></small></h3>
+
+<div id="updateDiv">
+	<div>An update is available!<br>Make sure to keep a <strong>backup of your current files</strong> before you proceed to update.</div>
+	<div>
+		<a role="button" class="btn btn-danger perform-update-btn" data-toggle="modal" data-target="#updateModal">Perform Update</a>
+	</div>
+
+	<div id="updating-div">
+		<span>Starting update...</span>
+	</div>
+
+	<div id="updateModal" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">Changes Log</h4>
+				</div>
+
+				<div class="modal-body">
+					<p>
+						Warning: these files will be updated. If you have made any changes to any of these files, you will lose your customizations.
+						<ul>{$changelogs <!-- html/parts/admin-update-changelog-each.html -->}</ul>
+					</p>
+				</div>
+				<div class="modal-footer">
+					<button id="proceedUpdate" type="button" class="btn btn-danger" data-dismiss="modal">Confirm and Proceed</button>
+					<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		jQuery(document).on("click", "#proceedUpdate", function(e)
+		{
+			jQuery("#updating-div").slideDown(function()
+			{
+				download_update();
+			});
+		});
+
+		function download_update()
+		{
+			jQuery.ajax({
+				type: 'GET',
+				url: '?download_update=1',
+				beforeSend: function()
+				{
+					jQuery("#updating-div").append('<span>Downloading update...</span>');
+				},
+				success: function(result)
+				{
+					if (typeof result.status !== 'undefined' && result.status == "OK")
+					{
+						extract_update();
+					}
+					else
+					{
+						jQuery("#updating-div").append('<span>Downloading failed!</span>');
+					}
+				}
+			});
+		}
+
+		function extract_update()
+		{
+			jQuery.ajax({
+				type: 'GET',
+				url: '?extract_update=1',
+				beforeSend: function()
+				{
+					jQuery("#updating-div").append('<span>Extracting update...</span>');
+				},
+				success: function(result)
+				{
+					if (typeof result.status !== 'undefined' && result.status == "OK")
+					{
+						jQuery("#updating-div").append('<span>Extraction complete! <a role="button" class="btn btn-success btn-white" href="index.php">Go to Homepage</a></span>');
+					}
+					else
+					{
+						jQuery("#updating-div").append('<span>Extraction failed!</span>');
+					}
+				}
+			});
+		}
+	</script>
+</div>
+<script type="text/javascript">
+	var hu = {$has_update};
+	if (hu == false)
+	{
+		jQuery('#updateDiv').html('<div>No new update is available right now.</div>');
+	}
+</script>

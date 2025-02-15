@@ -1,0 +1,18 @@
+<!-- Nav tabs -->
+<ul class="nav nav-tabs" role="tablist">
+	{$members.tabs}
+</ul>
+
+<div id="members-content" class="tab-content">
+	{$members.tabpanels}
+</div>
+
+<script type="text/javascript">
+	var activetab = 'members';
+
+	if ('{$get.tab}' !== '')
+		activetab = '{$get.tab}';
+
+	jQuery("a.nav-link[aria-controls='" + activetab + "']").addClass("active");
+	jQuery("#" + activetab).addClass("active");
+</script>

@@ -1,0 +1,79 @@
+Table Name: 
+<input class="form-control" maxlength="25" name="tname" type="text"><br>
+
+Type:
+<select id="ttype" class="form-control" name="ttype"></select>
+<script type="text/javascript">
+	var tt = {$table_types};
+	for (var i = 0; i < tt.length; i++)
+	{
+		jQuery('#ttype').append('<option value="' + tt[i].value + '">' + tt[i].label + '</option>');
+	}
+</script>
+<br>
+
+Game Style:
+<select id="gstyle" class="form-control" name="gstyle"></select>
+<script type="text/javascript">
+	var gs = {$game_styles};
+	for (var i = 0; i < gs.length; i++)
+	{
+		jQuery('#gstyle').append('<option value="' + gs[i].value + '">' + gs[i].label + '</option>');
+	}
+</script>
+<br>
+
+Min. Buyin: 
+<select id="tmin" class="form-control" name="tmin"></select>
+<script type="text/javascript">
+	var minb = {$min_buyins};
+	for (var i = 0; i < minb.length; i++)
+	{
+		jQuery('#tmin').append('<option value="' + minb[i].value + '">' + minb[i].label + '</option>');
+	}
+</script>
+<br>
+
+Max. Buyin: 
+<select id="tmax" class="form-control" name="tmax"></select>
+<script type="text/javascript">
+	var maxb = {$max_buyins};
+	for (var i = 0; i < maxb.length; i++)
+	{
+		jQuery('#tmax').append('<option value="' + maxb[i].value + '">' + maxb[i].label + '</option>');
+	}
+</script>
+<br>
+
+Small Blind: 
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text">$</span>
+  </div> 
+  <input class="form-control" maxlength="25" name="sbamount" type="text">
+</div>
+<br>
+
+Big Blind: 
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text">$</span>
+  </div> 
+  <input class="form-control" maxlength="25" name="bbamount" type="text">
+</div>
+<br>
+
+<input name="action" type="hidden" value="createtable">
+
+Style:
+<select id="tstyle" class="form-control" name="tstyle">
+	<option selected>table_green</option>
+</select>
+<script type="text/javascript">
+	var tstyles = {$table_styles};
+	for (var i = 0; i < tstyles.length; i++)
+	{
+		jQuery('#tstyle').append('<option value="' + tstyles[i].value + '">' + tstyles[i].label + '</option>');
+	}
+</script>
+<br>

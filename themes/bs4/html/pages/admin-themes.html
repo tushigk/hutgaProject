@@ -1,0 +1,33 @@
+<!-- Nav tabs -->
+<ul class="nav nav-tabs" role="tablist">
+	<li role="presentation" class="nav-item">
+		<a class="nav-link active" href="#allthemes" aria-controls="home" role="tab" data-toggle="tab">Themes</a>
+	</li>
+
+	<li role="presentation" class="nav-item">
+		<a class="nav-link" href="#installtheme" aria-controls="profile" role="tab" data-toggle="tab">Install Theme</a>
+	</li>
+</ul>
+
+<!-- Tab panes -->
+<div class="tab-content">
+	<div role="tabpanel" class="tab-pane active" id="allthemes">
+		<table class="table table-hover" border="0" cellspacing="0" cellpadding="0">
+			<thead>
+				<th>Name</th>
+				<th>Description</th>
+				<th>Author</th>
+				<th>Actions</th>
+				<th>Version</th>
+				<th>Updates</th>
+			</thead>
+			<tbody>
+				{$rows <!-- html/parts/admin-theme-row-each.html -->}
+			</tbody>
+		</table>
+	</div>
+
+	<div role="tabpanel" class="tab-pane" id="installtheme">
+		<div class="panel-body">{$install <!-- html/parts/admin-theme-install.html -->}</div>
+	</div>
+</div>

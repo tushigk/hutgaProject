@@ -1,0 +1,27 @@
+<!-- Nav tabs -->
+<ul class="nav nav-tabs" role="tablist">
+	<li role="presentation" class="nav-item">
+		<a class="nav-link" href="admin.php?admin=tables">All Tables</a>
+	</li>
+
+	<li role="presentation" class="nav-item">
+		<a class="nav-link active" href="#" aria-controls="profile" role="tab" data-toggle="tab">Create Table</a>
+	</li>
+</ul>
+
+<br>
+
+<form name="edittable" method="post" action="admin.php">
+    {$inputs <!-- html/parts/admin-edit-table-inputs.html -->}
+
+    <button type="submit" class="btn btn-success">{$BUTTON_SAVE}</button>
+    <a href="admin.php?admin=tables" class="btn btn-warning">{$BUTTON_BACK}</a>
+</form>
+
+<script type="text/javascript">
+    var isTable = {$is_table};
+    if (isTable == false)
+    {
+        jQuery('#admin_page_content').html('<div class="alert alert-danger">{$ADMIN_TABLE_MISSING}</div>');
+    }
+</script>

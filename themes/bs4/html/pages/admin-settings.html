@@ -1,0 +1,175 @@
+<!-- Nav tabs -->
+<ul class="nav nav-tabs" role="tablist">
+	<li role="presentation" class="nav-item">
+		<a class="nav-link active" href="#main" aria-controls="home" role="tab" data-toggle="tab">Basic Settings</a>
+	</li>
+
+	<li role="presentation" class="nav-item">
+		<a class="nav-link" href="#details" aria-controls="profile" role="tab" data-toggle="tab">Detailed Settings</a>
+	</li>
+</ul>
+
+<!-- Tab panes -->
+<div class="tab-content">
+	<div role="tabpanel" class="tab-pane active" id="main">
+
+		<div class="col-md-12 pt-4">
+			<form name="form2" method="post" action="admin.php?admin=settings">
+				{$settings.inputs.basic}
+				<br>
+				<input type="submit" name="Submit" value="{$BUTTON_SAVE_SETTINGS}" class="btn btn-success">
+				<input type="hidden" name="action" value="update">
+			</form>
+		</div>
+	</div>
+
+	<div role="tabpanel" class="tab-pane" id="details">
+
+		<div class="col-md-12 pt-4">
+			<form name="form2" method="post" action="admin.php?admin=settings">
+				{$settings.inputs.detailed}
+				<br>
+				<input type="submit" name="Submit" value="{$BUTTON_SAVE_SETTINGS}" class="btn btn-success">
+				<input type="hidden" name="action" value="update2">
+			</form>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+	var gt = {$get};
+	if (typeof(gt.ud) !== "undefined")
+	{
+		jQuery("#admin_page_content").prepend('<div class="alert alert-success">{$ADMIN_SETTINGS_UPDATED}</div>');
+	}
+
+	var emailmode  = '{$EMAILMOD}';
+	var emailmodes = {$email_modes};
+	for (var i = 0; i < emailmodes.length; i++)
+	{
+		if (emailmodes[i].value == emailmode)
+			jQuery('select[name="emailmode"]').append('<option value="' + emailmodes[i].value + '" selected>' + emailmodes[i].label + '</option>');
+		else
+			jQuery('select[name="emailmode"]').append('<option value="' + emailmodes[i].value + '">' + emailmodes[i].label + '</option>');
+	}
+
+	var appmode  = '{$APPMOD}';
+	var appmodes = {$app_modes};
+	for (var i = 0; i < appmodes.length; i++)
+	{
+		if (appmodes[i].value == appmode)
+			jQuery('select[name="appmode"]').append('<option value="' + appmodes[i].value + '" selected>' + appmodes[i].label + '</option>');
+		else
+			jQuery('select[name="appmode"]').append('<option value="' + appmodes[i].value + '">' + appmodes[i].label + '</option>');
+	}
+
+	var ipcheck  = '{$IPCHECK}';
+	var ipchecks = {$ip_checks};
+	for (var i = 0; i < ipchecks.length; i++)
+	{
+		if (ipchecks[i].value == ipcheck)
+			jQuery('select[name="ipcheck"]').append('<option value="' + ipchecks[i].value + '" selected>' + ipchecks[i].label + '</option>');
+		else
+			jQuery('select[name="ipcheck"]').append('<option value="' + ipchecks[i].value + '">' + ipchecks[i].label + '</option>');
+	}
+
+	var memsess  = '{$SESSNAME}';
+	var memmode  = '{$MEMMOD}';
+	var memmodes = {$mem_modes};
+	for (var i = 0; i < memmodes.length; i++)
+	{
+		if (memmodes[i].value == memmode)
+			jQuery('select[name="memmode"]').append('<option value="' + memmodes[i].value + '" selected>' + memmodes[i].label + '</option>');
+		else
+			jQuery('select[name="memmode"]').append('<option value="' + memmodes[i].value + '">' + memmodes[i].label + '</option>');
+	}
+	if (memmode == 1)
+	{
+		jQuery('select[name="memmode"]').next().after('{$ADMIN_SETTINGS_SESSNAME}<input type="text" name="session" size="25" class="form-control" value="{$SESSNAME}"><span id="memsessname" class="help-block">{$ADMIN_SETTINGS_SESSNAME_HELP}</span>');
+
+		if (memsess == '')
+		{
+			jQuery('#memsessname').prepend('<span class="badge badge-warning">You must enter a session variable!!</span>');
+		}
+	}
+
+	var delet  = '{$DELETE}';
+	var delets = {$deletes};
+	for (var i = 0; i < delets.length; i++)
+	{
+		if (delets[i].value == delet)
+			jQuery('select[name="delete"]').append('<option value="' + delets[i].value + '" selected>' + delets[i].label + '</option>');
+		else
+			jQuery('select[name="delete"]').append('<option value="' + delets[i].value + '">' + delets[i].label + '</option>');
+	}
+
+	var stakesize  = '{$STAKESIZE}';
+	var stakesizes = {$stakesizes};
+	for (var i = 0; i < stakesizes.length; i++)
+	{
+		if (stakesizes[i].value == stakesize)
+			jQuery('select[name="stakesize"]').append('<option value="' + stakesizes[i].value + '" selected>' + stakesizes[i].label + '</option>');
+		else
+			jQuery('select[name="stakesize"]').append('<option value="' + stakesizes[i].value + '">' + stakesizes[i].label + '</option>');
+	}
+
+	var renew  = '{$RENEW}';
+	var renews = {$renews};
+	for (var i = 0; i < renews.length; i++)
+	{
+		if (renews[i].value == renew)
+			jQuery('select[name="renew"]').append('<option value="' + renews[i].value + '" selected>' + renews[i].label + '</option>');
+		else
+			jQuery('select[name="renew"]').append('<option value="' + renews[i].value + '">' + renews[i].label + '</option>');
+	}
+
+	var kicktimer  = '{$KICKTIMER}';
+	var kicktimers = {$kicktimers};
+	for (var i = 0; i < kicktimers.length; i++)
+	{
+		if (kicktimers[i].value == kicktimer)
+			jQuery('select[name="kick"]').append('<option value="' + kicktimers[i].value + '" selected>' + kicktimers[i].label + '</option>');
+		else
+			jQuery('select[name="kick"]').append('<option value="' + kicktimers[i].value + '">' + kicktimers[i].label + '</option>');
+	}
+
+	var movetimer  = '{$MOVETIMER}';
+	var movetimers = {$movetimers};
+	for (var i = 0; i < movetimers.length; i++)
+	{
+		if (movetimers[i].value == movetimer)
+			jQuery('select[name="move"]').append('<option value="' + movetimers[i].value + '" selected>' + movetimers[i].label + '</option>');
+		else
+			jQuery('select[name="move"]').append('<option value="' + movetimers[i].value + '">' + movetimers[i].label + '</option>');
+	}
+
+	var showdown  = '{$SHOWDOWN}';
+	var showdowns = {$showdowns};
+	for (var i = 0; i < showdowns.length; i++)
+	{
+		if (showdowns[i].value == showdown)
+			jQuery('select[name="showdown"]').append('<option value="' + showdowns[i].value + '" selected>' + showdowns[i].label + '</option>');
+		else
+			jQuery('select[name="showdown"]').append('<option value="' + showdowns[i].value + '">' + showdowns[i].label + '</option>');
+	}
+
+	var waittimer  = '{$WAITIMER}';
+	var waittimers = {$waittimers};
+	for (var i = 0; i < waittimers.length; i++)
+	{
+		if (waittimers[i].value == waittimer)
+			jQuery('select[name="wait"]').append('<option value="' + waittimers[i].value + '" selected>' + waittimers[i].label + '</option>');
+		else
+			jQuery('select[name="wait"]').append('<option value="' + waittimers[i].value + '">' + waittimers[i].label + '</option>');
+	}
+
+	var disconnect  = '{$DISCONNECT}';
+	var disconnects = {$disconnects};
+	for (var i = 0; i < disconnects.length; i++)
+	{
+		if (disconnects[i].value == disconnect)
+			jQuery('select[name="disconnect"]').append('<option value="' + disconnects[i].value + '" selected>' + disconnects[i].label + '</option>');
+		else
+			jQuery('select[name="disconnect"]').append('<option value="' + disconnects[i].value + '">' + disconnects[i].label + '</option>');
+	}
+</script>

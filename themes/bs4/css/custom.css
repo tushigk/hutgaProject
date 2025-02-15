@@ -1,0 +1,153 @@
+body {
+	font-size: 14px;
+	font-family: "Helvetica Neue", sans-serif;
+	-webkit-font-smoothing: antialiased;
+	overflow-x: hidden;
+}
+
+.dropdown-menu {
+	font-size: 14px;
+}
+
+/**
+ * Profile image component
+ */
+.profile-header-container{
+    margin: 0 auto;
+    text-align: center;
+}
+
+.profile-header-img > img.img-circle {
+    width: 200px;
+    height: 200px;
+    border: 5px solid #484848;
+}
+
+/**
+ * Ranking component
+ */
+.rank-label-container {
+    margin-top: -10px;
+    /* z-index: 1000; */
+    text-align: center;
+    margin-left: -35px;
+}
+
+.label.label-default.rank-label {
+    background-color: #484848;
+    padding: 5px 10px 5px 10px;
+    border-radius: 27px;
+    font-size: 16px;
+    color: #ffffff;
+}	
+
+.cuttext {
+	text-overflow: ellipsis;
+	overflow: hidden;
+	width: 99%;
+	height: 1.2em;
+	white-space: nowrap;
+}
+
+.cut-text {
+	text-overflow: ellipsis;
+	overflow: hidden;
+	height: 1.2em;
+	white-space: nowrap;
+}
+
+#pcon1 {
+	position: absolute;
+	margin: 120px 0 0 560px;
+}
+#pcon2 {
+	position: absolute;
+	margin: 120px 0 0 250px;
+}
+#pcon3 {
+	position: absolute;
+	margin: 220px 0 0 60px;
+}
+#pcon4 {
+	position: absolute;
+	margin: 380px 0 0 60px;
+}
+#pcon5 {
+	position: absolute;
+	margin: 460px 0 0 250px;
+}
+#pcon6 {
+	position: absolute;
+	margin: 460px 0 0 405px;
+}
+#pcon7 {
+	position: absolute;
+	margin: 460px 0 0 560px;
+}
+#pcon8 {
+	position: absolute;
+	margin: 380px 0 0 735px;
+}
+#pcon9 {
+	position: absolute;
+	margin: 220px 0 0 740px;
+}
+#pcon10 {
+	position: absolute;
+	margin: 120px 0 0 405px;
+}
+
+.prl-one {
+	position: absolute;
+	margin: 0 0 0 -22px;
+}
+.prl-two {
+	float: left;
+	clear: both;
+	margin-top: -3px;
+	position: relative;
+	z-index: 1;
+	height: 3px;
+}
+.prl-three {
+	height: 3px;
+}
+.prl-four {
+	position: absolute;
+	margin-top: -70px;
+}
+.prl-five {
+	position: absolute;
+	margin: -60px 0 0 -23px;
+}
+.prl-six {
+	position: absolute;
+	margin: 50px 0 0 -20px;
+}
+
+.backup-ul li {
+	color: #444;
+	margin-bottom: 15px;
+}
+.backup-ul li span {
+	color: #000;
+}
+.backup-ul a.btn,
+.perform-update-btn,
+.btn-white {
+	color: white !important;
+}
+.backup-size {
+	font-size: 85%;
+}
+
+#updating-div {
+	display: none;
+	margin-top: 25px;
+}
+#updating-div span {
+	display: block;
+}
+#updating-div span:last-of-type {
+	font-weight: bold;
+}

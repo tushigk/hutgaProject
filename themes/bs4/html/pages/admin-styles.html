@@ -1,0 +1,48 @@
+<!-- Nav tabs -->
+<ul class="nav nav-tabs" role="tablist">
+	<li role="presentation" class="nav-item">
+		<a class="nav-link active" href="#allstyles" aria-controls="home" role="tab" data-toggle="tab">Table Styles</a>
+	</li>
+
+	<li role="presentation" class="nav-item">
+		<a class="nav-link" href="#addstyle" aria-controls="profile" role="tab" data-toggle="tab">Install Table Style</a>
+	</li>
+</ul>
+
+<!-- Tab panes -->
+<div class="tab-content pt-4">
+	<div role="tabpanel" class="tab-pane active" id="allstyles">
+		<div class="row">
+			<div class="col-md-4 mb-4">
+				<center>			
+						<img src="images/tablelayout/table_green.png" width="250" class="img-fluid">
+						<p>table_green</p>
+				</center>
+			</div>
+			{$styles <!-- html/parts/admin-style-each.html -->}
+		</div>
+	</div>
+ 
+    <div role="tabpanel" class="tab-pane" id="addstyle">
+		<br>
+		<form name="form3" method="post" action="" enctype="multipart/form-data">
+			<input type="hidden" name="action" value="install">
+			<input type="hidden" name="lic" value="{$lic}" size="40" maxlength="40" class="form-control">
+
+			Table Template File
+		    <input type="file" name="uploaded_file" accept="image/png">
+			<br>
+
+			<input type="submit" name="Submit" value="{$BUTTON_INSTALL}"  class="btn btn-success">
+		</form>
+    </div>
+</div>
+<script type="text/javascript">
+	var msg = '{$message}';
+	if (msg.length > 0)
+		jQuery("#allstyles").prepend(msg);
+
+	var success = '{$get.success}';
+	if (success !== '')
+		jQuery('#admin_page_content').prepend('<div class="alert alert-success">New style has been added!</div>');
+</script>

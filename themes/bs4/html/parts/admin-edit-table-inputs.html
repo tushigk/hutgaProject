@@ -1,0 +1,91 @@
+<input type="hidden" name="action" value="edittable">
+<input type="hidden" name="gameID" value="{$table.gameID}">
+
+{$ADMIN_TABLES_NAME}
+<input type="text" name="tablename" class="form-control" size="60" maxlength="60" value="{$table.tablename}">
+<span class="help-block"></span>
+<br>
+
+{$ADMIN_TABLES_TYPE}
+<input type="text" name="tabletype" class="form-control" size="60" maxlength="60" value="{$tabletype}" readonly>
+<span class="help-block"></span>
+<br>
+
+{$ADMIN_TABLES_GAME}
+<select name="gamestyle" class="form-control"></select>
+<script type="text/javascript">
+    var gs = {$game_styles};
+    for (var i = 0; i < gs.length; i++)
+    {
+        if (gs[i].value == '{$table.gamestyle}')
+            jQuery('select[name="gamestyle"]').append('<option value="' + gs[i].value + '" selected>' + gs[i].label + '</option>');
+        else
+            jQuery('select[name="gamestyle"]').append('<option value="' + gs[i].value + '">' + gs[i].label + '</option>');
+    }
+</script>
+<span class="help-block"></span>
+<br>
+
+{$ADMIN_TABLES_MIN}
+<select name="tablelow" class="form-control"></select>
+<script type="text/javascript">
+    var minb = {$min_buyins};
+    for (var i = 0; i < minb.length; i++)
+    {
+        if (minb[i].value == '{$table.tablelow}')
+            jQuery('select[name="tablelow"]').append('<option value="' + minb[i].value + '" selected>' + minb[i].label + '</option>');
+        else
+            jQuery('select[name="tablelow"]').append('<option value="' + minb[i].value + '">' + minb[i].label + '</option>');
+    }
+</script>
+<span class="help-block"></span>
+<br>
+
+{$ADMIN_TABLES_MAX}
+<select name="tablelimit" class="form-control"></select>
+<script type="text/javascript">
+    var maxb = {$max_buyins};
+    for (var i = 0; i < maxb.length; i++)
+    {
+        if (maxb[i].value == '{$table.tablelimit}')
+            jQuery('select[name="tablelimit"]').append('<option value="' + maxb[i].value + '" selected>' + maxb[i].label + '</option>');
+        else
+            jQuery('select[name="tablelimit"]').append('<option value="' + maxb[i].value + '">' + maxb[i].label + '</option>');
+    }
+</script>
+<span class="help-block"></span>
+<br>
+
+{$ADMIN_TABLES_SB}:
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text">$</span>
+  </div> 
+  <input class="form-control" maxlength="25" name="sbamount" type="text" value="{$sblind}">
+</div>
+<br>
+
+{$ADMIN_TABLES_BB}:  
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text">$</span>
+  </div> 
+  <input class="form-control" maxlength="25" name="bbamount" type="text" value="{$bblind}">
+</div>
+<br>
+
+
+{$ADMIN_TABLES_STYLE}
+<select name="tablestyle" class="form-control"></select>
+<script type="text/javascript">
+    var ts = {$table_styles};
+    for (var i = 0; i < ts.length; i++)
+    {
+        if (ts[i].value == '{$table.tablestyle}')
+            jQuery('select[name="tablestyle"]').append('<option value="' + ts[i].value + '" selected>' + ts[i].label + '</option>');
+        else
+            jQuery('select[name="tablestyle"]').append('<option value="' + ts[i].value + '">' + ts[i].label + '</option>');
+    }
+</script>
+<span class="help-block"></span>
+<br>

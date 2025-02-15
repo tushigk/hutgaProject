@@ -1,0 +1,61 @@
+var minRaise  = ({$min_raise} > 0)     ? ({$min_raise} / {$divider}) : 0;
+var maxRaise  = ({$max_raise} > 0)     ? ({$max_raise} / {$divider}) : 0;
+var initRaise = ({$initial_raise} > 0) ? ({$initial_raise} / {$divider}) : 0;
+var raiseStep = ({$raise_step} > 0)    ? ({$raise_step} / {$divider}) : 0;
+
+var betSlider = document.querySelector('.poker__betpopup-slider');
+noUiSlider.create(betSlider, {
+	range: {
+		'min': 0,
+		'max': maxRaise
+	},
+	tooltips: [
+		wNumb({
+			decimals: 2,
+			prefix: '{$MONEY_PREFIX}'
+		})
+	],
+	start: 0,
+	step: raiseStep,
+	connect: 'lower',
+	orientation: 'vertical',
+	direction: 'rtl'
+});
+
+var moneyFormat = wNumb({
+	decimals: 2,
+	prefix: '{$MONEY_PREFIX}'
+});
+
+var $btnSumma = $('.poker__bet-btn-summa');
+var $btnName = $('.poker__bet-btn-name');
+betSlider.noUiSlider.on('update', function (values, handle) {
+	var resultNumber = values[handle];
+	$btnSumma.html('{$MONEY_PREFIX}' + resultNumber);
+	if (resultNumber > 0) {
+		$btnSumma.fadeIn();
+		$btnName.html('Confirm');
+		$('.poker__bet-btn').attr('onclick', 'push_action(' + (resultNumber * {$multiplier}) + ');');
+	} else {
+		$btnSumma.hide();
+		$btnName.html('Bet');
+	}
+});
+
+$('.poker__bet-btn').one('click', function()
+{
+	betSlider.noUiSlider.updateOptions({
+        range: {
+            'min': minRaise,
+            'max': maxRaise
+        }
+    });
+	$('.poker__bet-btn').off('click');
+});
+
+function raise_level(amount)
+{
+	betSlider.noUiSlider.updateOptions({
+        start: (amount / {$divider})
+    });
+}
